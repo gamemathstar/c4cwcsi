@@ -24,7 +24,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title -->
-    <title>Home - Jago Welfare </title>
+    <title>C4CWCSI</title>
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- animate css -->
@@ -136,22 +136,22 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="{{route("home")}}" class="nav-link active">
+                                <a href="{{route("home")}}" class="nav-link {{ Route::currentRouteName()=="home"?"active":"" }}">
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('about')}}" class="nav-item">
+                                <a href="{{route('about')}}" class="nav-item {{ Route::currentRouteName()=="about"?"active":"" }}">
                                     About
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route("gallery") }}" class="nav-item">
+                                <a href="{{ route("gallery") }}" class="nav-item {{ Route::currentRouteName()=="gallery"?"active":"" }}">
                                     Gallery
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('contact')}}" class="nav-link">Contact</a>
+                                <a href="{{route('contact')}}" class="nav-item {{ Route::currentRouteName()=="contact"?"active":"" }}">Contact</a>
                             </li>
                         </ul>
                         <div class="others-options d-flex align-items-center">
