@@ -3,7 +3,7 @@
 
 @section('content')
     <!-- Banner Area -->
-    <section id="common_banner_area">
+    <section id="common_banner_area" style="background-image: url('{{asset("06.avif")}}')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

@@ -89,7 +89,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="col-lg-6 col-md-6">
                     <ul class="topbar-list">
 
-                        <li><a href="#!"><i class="fa fa-envelope"></i><span>c4c4csinitiative@gmail.com</span></a>
+                        <li><a href="#!"><i class="fa fa-envelope"></i><span>c4cwcsinitiative@gmail.com</span></a>
                         </li>
                         <li><a href="#!"><i class="fa fa-phone"></i><span> +2348092855953, +2348099995750</span></a></li>
 {{--                        <li><a href="#!"><span>Faqs</span></a></li>--}}
@@ -146,7 +146,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-item">
+                                <a href="{{ route("gallery") }}" class="nav-item">
                                     Gallery
                                 </a>
                             </li>
@@ -157,7 +157,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="others-options d-flex align-items-center">
 
                             <div class="option-item">
-                                <a href="make-donation.html" class="btn btn_navber">Donate now</a>
+                                <a href="{{route("donate")}}" class="btn btn_navber">Donate now</a>
                             </div>
                         </div>
                     </div>
@@ -270,4 +270,5 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('assets/js/custom-progress-bar.js')}}"></script>
 <script src="{{asset('assets/js/custom-scroll-count.js')}}"></script>
 <script src="{{asset('assets/js/video.js')}}"></script>
+<script src="assets/js/gallery-popup.js"></script>
 </html>

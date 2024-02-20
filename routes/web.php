@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ColorSchemeController;
+use App\Http\Controllers\DarkModeController;
+use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +17,39 @@ use App\Http\Controllers\ColorSchemeController;
 |
 */
 
-Route::get('/', function (){return view('pages.home');})->name('home');
-Route::get('/about', function (){return view('pages.about');})->name('about');
-Route::get('/contact', function (){return view('pages.contact');})->name('contact');
+Route::get('/',function () {
+        return view('pages.home');
+    })->name('home');
+Route::get('/about', function () {
+        return view('pages.about');
+    })->name('about');
+Route::get('/contact',function () {
+        return view('pages.contact');
+    })->name('contact');
+Route::get('/donate',function () {
+        return view('pages.donate');
+    })->name('donate');
+Route::get('/galleries',function () {
+    // Path to the directory containing images
+    $directory = public_path('gallery');
+
+    // Get all files in the directory
+    $files = File::files($directory);
+
+    // Filter only image files (if necessary)
+    $imageFiles = array_filter($files, function ($file) {
+        $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+        return in_array($extension, ['jpg', 'jpeg', 'png', 'gif','avif']);
+    });
+
+    // Map file paths to URLs
+    $imageUrls = array_map(function ($file) {
+        return asset('gallery/' . basename($file));
+    }, $imageFiles);
+
+    return view('pages.gallery', ['imageUrls' => $imageUrls]);
+//        return view('pages.gallery');
+    })->name('gallery');
 
 
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
